@@ -2,11 +2,25 @@
     <h1>{{fruitDetails.name}}</h1>
     <h2>{{fruitDetails.description}}</h2>
     <p>{{fruitDetails.category}}</p>
-    <!--<ul>
-        <li *ngFor="let benefit of fruitDetails.benefits">
-            {{benefit}}
-        </li>
-    </ul>-->
+
+    <ng-template [ngIf]="fruitDetails.benefits.length > 0" [ngIfElse]="noBenefitsYet">
+        <ul>
+            <li *ngFor="let benefit of fruitDetails.benefits">
+                {{benefit}}
+            </li>
+        </ul>
+    </ng-template>
+
+    <ng-template #noBenefitsYet>
+        <div>
+            Benefits are currently being updated
+        </div>
+    </ng-template>
+
+
+
 </div>
+
+
 
 <button (click)="goBack()">go back</button>
