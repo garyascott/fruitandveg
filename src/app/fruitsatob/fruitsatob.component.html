@@ -1,0 +1,8 @@
+<h1>{{fruitTitle}}</h1>
+
+
+<ul>
+    <li *ngFor="let abFruit of abFruits" routerLink="/list/{{abFruit.id}}">
+        <span class="badge">{{abFruit.id}}</span>
+    </li>
+</ul>
